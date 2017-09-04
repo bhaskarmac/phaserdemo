@@ -1,5 +1,5 @@
-demo.state2 = function () {};
-demo.state2.prototype = {
+demo.state8 = function () {};
+demo.state8.prototype = {
   preload: function () {
 
   },
