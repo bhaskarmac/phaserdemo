@@ -5,7 +5,8 @@ demo.state1.prototype = {
 
   },
   create: function () {
-
+    game.stage.backgroundColor = '#34495e';
+    console.log('In state1');
   },
   update: function () {
 
