@@ -4,7 +4,9 @@ demo.state8.prototype = {
 
   },
   create: function () {
-    game.stage.backgroundColor = '#bdc3c7';
+    game.stage.backgroundColor = '#ecf0f1';
+    addChangeStateEventListeners();
+
   },
   update: function () {
 
