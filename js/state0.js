@@ -2,12 +2,14 @@ var demo = {};
 demo.state0 = function () {};
 demo.state0.prototype = {
   preload: function () {
-
+    game.load.image('adam', 'assets/sprites/player.png');
   },
   create: function () {
     game.stage.backgroundColor = '#1abc9c';
     addChangeStateEventListeners();
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    
+    game.add.sprite(1500/2, 1000/2, 'adam');
   },
   update: function () {
 
