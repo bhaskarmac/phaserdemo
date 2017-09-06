@@ -28,8 +28,10 @@ demo.state0.prototype = {
     //horizontal movement
     if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
       adam.x += speed;
+      adam.scale.setTo(0.7, 0.7);
     }else if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
       adam.x -= speed;
+      adam.scale.setTo(-0.7, 0.7);
     }
 
     //vertical movement
