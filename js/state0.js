@@ -21,6 +21,7 @@ demo.state0.prototype = {
 
     //making camera follow to the player
     game.camera.follow(adam);
+    game.camera.deadzone = new Phaser.Rectangle(centerX-300, 0, 600, 1000);
   },
   update: function () {
 
