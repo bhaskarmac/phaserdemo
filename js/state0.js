@@ -6,6 +6,8 @@ demo.state0.prototype = {
     game.load.image('tree', 'assets/backgrounds/treeBG.png');
   },
   create: function () {
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
     game.stage.backgroundColor = '#1abc9c';
     addChangeStateEventListeners();
 
@@ -18,6 +20,8 @@ demo.state0.prototype = {
     adam = game.add.sprite(centerX, centerY, 'adam');
     adam.anchor.setTo(0.5, 0.5);
     adam.scale.setTo(0.7, 0.7);
+    game.physics.enable(adam);
+    adam.body.collideWorldBounds= true;
 
     //making camera follow to the player
     game.camera.follow(adam);
@@ -37,6 +41,9 @@ demo.state0.prototype = {
     //vertical movement
     if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
       adam.y -= speed;
+      if(adam.y<431){
+        adam.y = 431;
+      }
     }else if(game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
       adam.y += speed;
     }
