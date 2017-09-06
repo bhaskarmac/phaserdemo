@@ -1,16 +1,26 @@
-var demo = {}, centerX = 1500/2, centerY = 1000/2, adam, speed = 4;
+var demo = {}, centerX = 1500/2, centerY = 1000/2, adam, speed = 6;
 demo.state0 = function () {};
 demo.state0.prototype = {
   preload: function () {
     game.load.image('adam', 'assets/sprites/player.png');
+    game.load.image('tree', 'assets/backgrounds/treeBG.png');
   },
   create: function () {
     game.stage.backgroundColor = '#1abc9c';
     addChangeStateEventListeners();
+
+    //adding boundry to the game world
+    game.world.setBounds(0, 0, 2813, 1000);
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
+    //ading the background world as tree image
+    var treeBG = game.add.sprite(0, 0, 'tree');
     adam = game.add.sprite(centerX, centerY, 'adam');
     adam.anchor.setTo(0.5, 0.5);
+    adam.scale.setTo(0.7, 0.7);
+
+    //making camera follow to the player
+    game.camera.follow(adam);
   },
   update: function () {
 
